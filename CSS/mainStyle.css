@@ -1,0 +1,503 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* main */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* screen */
+.screen {
+    display: none;
+}
+
+/* Navigation menu */
+nav {
+    background-color: #000000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #f9e42e;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* text */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f9e42e;
+}
+
+p {
+    font-size: 18px;
+    color: white;
+}
+
+h3 {
+    font-size: 20px;
+    color: white;
+}
+
+/* Links */
+a {
+    color: #f9e42e;
+    text-decoration: none;
+}
+
+/* style for containers */
+.welcome-container, 
+.registration-container, 
+.login-container,
+.config-container {
+    flex: 1; 
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#welcomeScreen a {
+    color: #1a73e8; 
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+#welcomeScreen a:hover {
+    color: #0c50a3;
+}
+ 
+/* Footer */
+.site-footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #f9e42e;
+    margin-top: auto;
+}
+  
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    word-break: break-all;
+  }
+  
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  
+  .footer-links a {
+    color: #f9e42e;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+/* Logo */
+.logo-section {
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.button-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* All buttons */
+.button,
+button,
+.toggle-password {
+    background-color: #f9e42e;
+    color: #222222;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button,
+button {
+    padding: 15px 25px;
+    font-size: 16px;
+}
+
+.button:hover,
+button:hover,
+.toggle-password:hover {
+    background-color: #ffe600;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #f9e42e;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* modal screens */
+#openAboutBtn {
+    position: absolute;
+    top: 52px;
+    right: 2px;
+    z-index: 1001;
+    background-color: #f9e42e;
+    color: #222;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#openAboutBtn:hover {
+    background-color: #ffe600;
+}
+
+.modal  {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #000;
+    color: white;
+    margin: 80px auto; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    text-align: left;
+    direction: ltr;
+
+}
+
+.modal a{
+    text-decoration: underline;
+    color: #0c50a3;
+}
+.modal-close {
+    color: #f9e42e;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #ffe600;
+}
+
+.submitter-info {
+    margin-bottom: 15px;
+}
+
+.technical-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Configuration */
+.config-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.config-form h2 {
+    color: #f9e42e;
+    margin: 30px 0 15px 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.config-form input[type="color"] {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* toggles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-container input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.toggle-label {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background: #444;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border-radius: 19px;
+    transition: 0.3s;
+}
+
+input:checked + .toggle-label {
+    background: #f9e42e;
+}
+
+input:checked + .toggle-label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+}
+
+.toggle-text {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Volume slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height: 6px;
+    border-radius: 5px;  
+    background: #444;
+    outline: none;
+    margin-right: 10px;
+    transform: rotate(180deg);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; 
+    background: #f9e42e;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f9e42e;
+    cursor: pointer;
+}
+
+#musicVolumeValue, #effectsVolumeValue {
+    font-size: 14px;
+    width: 40px;
+    display: inline-block;
+}
+
+/* Password field */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    background: none;
+    color: #f9e42e;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* Birth date fields */
+.birth-date-container {
+    display: flex;
+    gap: 10px;
+}
+
+.birth-date-field {
+    flex: 1;
+}
+
+.sub-label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #ccc;
+}
+
+
+/* Responsive design */
+@media (max-width: 650px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    #game-area {
+        height: 400px;
+    }
+    
+    .game-info {
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+    
+    #game-over, #game-win {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .ingame-button {
+        margin-top: 5px;
+    }
+}
+
+
+/* Chrome compatibility and minimum resolution of 1366x768 */
+
+/* responsive requirements */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1366px; 
+  min-height: 768px; 
+  overflow-x: auto; 
+}
+
+/* Chrome requierment */
+@supports (-webkit-appearance:none) {
+    #game-area, .screen, #player, .enemy {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Center the game */
+@media screen and (min-width: 1366px) and (min-height: 768px) {
+  .container {
+    position: relative;
+    margin: 20px auto;
+  }
+  
+  
+  #game-area {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+/* responsive game screens */
+#gameScreen {
+  min-height: 600px; 
+}
+
+/* gameplay area spacing */
+.game-container {
+  min-height: 500px;
+}
+
+/* modal screens centered */
+.about-modal-content, #game-over, #game-win {
+  max-height: 80vh;
+  overflow-y: auto;
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pac-Man Game</title>
+    <link rel="stylesheet" href="CSS/mainStyle.css">
+    <link rel="stylesheet" href="CSS/gameStyle.css">
+</head>
+<body>
+    <!-- Navigation menu -->
+    <nav>
+        <a href="javascript:void(0);" id="goToWelcome">Welcome</a>
+        <a href="javascript:void(0);" id="goToLogin">Login</a>
+        <a href="javascript:void(0);" id="goToRegister">Register</a>
+    
+    </nav>
+
+    <!-- all screens -->
+    <div class="container">
+        <button id="openAboutBtn">About</button>
+        <!-- Welcome screen -->
+        <div id="welcomeScreen" class="screen welcome-container">
+            <div class="logo-section">
+                <img src="photos/logo.png" alt="Logo" class="logo">
+                <h1>Welcome to My Pac-Man Game</h1>
+                <p>Names: Noa Patchornik and Yaki Naftali</p>
+                <p>ID's: 319123048 and 318969177</p>
+                <p>Link to Home Page:</p>
+                <p>
+                <a href="https://wed-2023.github.io/assignment2-319123048_318969177_assignment2/" target="_blank">
+                    https://wed-2023.github.io/assignment2-319123048_318969177_assignment2/
+                </a>
+                </p>
+            </div>
+
+            <div class="button-section">
+                <button id="registerButton" class="button">Register</button>
+                <button id="loginButton" class="button">Login</button>
+            </div>
+        </div>
+
+        <!-- Registration screen -->
+        <div id="registrationScreen" class="screen registration-container">
+            <h1>Registration</h1>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="toggle-password" title="Show password">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <button type="button" class="toggle-password" title="Show password">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">Birth Date</label>
+                    <div class="birth-date-container">
+                        <div class="birth-date-field">
+                            <label for="birthDay" class="sub-label">Day</label>
+                            <select id="birthDay" name="birthDay" required></select>
+                        </div>
+                        <div class="birth-date-field">
+                            <label for="birthMonth" class="sub-label">Month</label>
+                            <select id="birthMonth" name="birthMonth" required></select>
+                        </div>
+                        <div class="birth-date-field">
+                            <label for="birthYear" class="sub-label">Year</label>
+                            <select id="birthYear" name="birthYear" required></select>
+                        </div>
+                    </div>
+                </div>
+                <button id="registerSubmitButton" type="button" class="button">Register</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px;">Already have an account? <a href="javascript:void(0);" id="toLogin">Login here</a></p>
+        </div>
+
+        <!-- Login screen -->
+        <div id="loginScreen" class="screen login-container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" name="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px;">Don't have an account? <a href="javascript:void(0);" id="toRegister">Register here</a></p>
+        </div>
+
+
+<!-- Configuration Screen -->
+<div id="configScreen" class="screen config-container">
+    <h1>Game Configuration</h1>
+    <div class="config-form">
+        <!-- moving Keys -->
+        <h2>Controls</h2>
+        <div class="form-group">
+            <label for="leftKey">Move Left Key:</label>
+            <select id="leftKey" name="leftKey">
+                <option value="ArrowLeft" selected>Arrow Left</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="rightKey">Move Right Key:</label>
+            <select id="rightKey" name="rightKey">
+                <option value="ArrowRight" selected>Arrow Right</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="upKey">Move Up Key:</label>
+            <select id="upKey" name="upKey">
+                <option value="ArrowUp" selected>Arrow Up</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="downKey">Move Down Key:</label>
+            <select id="downKey" name="downKey">
+                <option value="ArrowDown" selected>Arrow Down</option>
+            </select>
+        </div>
+
+        <!-- Shooting Key -->
+        <div class="form-group">
+            <label for="shootKey">Shooting Key:</label>
+            <select id="shootKey" name="shootKey">
+                <option value=" " selected>Spacebar</option>
+            </select>
+        </div>
+        
+        <!-- Bullet Color -->
+        <div class="form-group">
+            <label for="bulletColor">Bullet Color:</label>
+            <select id="bulletColor" name="bulletColor">
+                <option value="#FFFF00" selected>Yellow</option>
+                <option value="#FFFFFF">White</option>
+                <option value="rgb(57, 246, 57)">Green</option>
+                <option value="#00FFFF">Bright Blue</option>
+                <option value="#FF00FF">Bright Purple</option>
+            </select>
+            <div id="bulletColorPreview" style="width: 30px; height: 30px; background-color: #FFFF00; margin-top: 10px; border-radius: 50%;"></div>
+        </div>
+        
+        <!-- Game Duration -->
+        <div class="form-group">
+            <label for="gameDuration">Game Duration (minutes):</label>
+            <input type="number" id="gameDuration" name="gameDuration" min="2" value="2">
+        </div>
+
+        <!-- Sound Settings -->
+        <h2>Sound Settings</h2>
+        <div class="form-group">
+            <label for="backgroundMusic">Background Music:</label>
+            <div class="toggle-container">
+                <input type="checkbox" id="backgroundMusic" name="backgroundMusic" checked>
+                <label for="backgroundMusic" class="toggle-label"></label>
+                <span class="toggle-text">On</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="musicVolume">Music Volume:</label>
+            <input type="range" id="musicVolume" name="musicVolume" min="0" max="100" value="50">
+            <span id="musicVolumeValue">50%</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="soundEffects">Sound Effects:</label>
+            <div class="toggle-container">
+                <input type="checkbox" id="soundEffects" name="soundEffects" checked>
+                <label for="soundEffects" class="toggle-label"></label>
+                <span class="toggle-text">On</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="effectsVolume">Effects Volume:</label>
+            <input type="range" id="effectsVolume" name="effectsVolume" min="0" max="100" value="70">
+            <span id="effectsVolumeValue">70%</span>
+        </div>
+        
+        <button id="startGameButton" class="button">Start Game</button>
+    </div>
+</div>
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen game-container">
+        <div class="game-title" style="text-align: center; font-size: 24px; font-weight: bold; color: rgb(104, 104, 104); margin-top: 10px;">
+            Game
+        </div>
+            
+        <div class="game-info">
+            <div class="score">ניקוד: <span id="score">0</span></div>
+            <div class="lives">חיים: <span id="lives">3</span></div>
+        </div>
+        <div id="game-area">
+            <div id="player"></div>
+        <!-- Enemy ghosts will be created by JavaScript -->
+        </div>
+        <!-- Game Over Screen -->
+<div id="game-over" class="hidden">
+    <h2 id="game-over-title">Game Over</h2>
+    <p>Your final score: <span id="final-score">0</span></p>
+    <div id="player-rank-message">You ranked <span id="player-rank">0</span> on your personal leaderboard!</div>
+    <div id="high-scores-container">
+        <h3>Your High Scores</h3>
+        <div id="high-scores-table"></div>
+    </div>
+    <div class="game-over-buttons">
+        <button id="restart-button">Play Again</button>
+        <button id="new-game-button">New Game</button>
+    </div>
+</div>
+
+<!-- Game Win Screen -->
+<div id="game-win" class="hidden">
+    <h2 id="game-win-title">Champion!</h2>
+    <p>Your final score: <span id="win-score">0</span></p>
+    <div id="player-win-rank-message">You ranked <span id="player-win-rank">0</span> on your personal leaderboard!</div>
+    <div id="win-high-scores-container">
+        <h3>Your High Scores</h3>
+        <div id="win-high-scores-table"></div>
+    </div>
+    <div class="game-over-buttons">
+        <button id="restart-win-button">Play Again</button>
+        <button id="new-win-game-button">New Game</button>
+    </div>
+</div>
+        </div>
+    </div>
+    
+
+    <!--About Modal screen-->
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>About the Project</h2>
+        
+        <div class="submitter-info">
+            <h3>Submitters:</h3>
+            <ul>
+                <li> Noa Patchornik </li>
+                <li> Yaki Naftali </li>
+            </ul>
+        </div>
+        
+        <div class="technical-info">
+            <h3>Technical Information:</h3>
+            <p>No external template was used, No jquery was used</p>
+            <br>
+            <h3>Project Challenges:</h3>
+            <p>During the development of the project, we encountered several challenges:</p>
+            <br>
+            <ul>
+                <li> Consider the structure of the project, with a logical and organized division of the JavaScript and CSS files.</li>
+                <li> Several functions in the game were quite complex and required multipule times to implement them correctly</li>
+                <li>Adapting the modal to different screen resolutions</li>
+                <li>Handling edge cases related to closing the modal</li>
+                <li>Adjusting the interface to support Hebrew and RTL layout</li>
+            </ul>
+            <br>
+            <h3>Instructions:</h3>
+            <br>
+            <p> To play the game, first register or log in via the buttons. After logging in you’ll 
+                land on the configuration screen, where you can select your movement keys, shooting key, bullet color,
+                background music volume, effects volume and total game time. These settings apply to every game you start. 
+                You can switch at any time between the welcome, login, register, configuration and game screens using the buttons
+                in the top menu.</p>
+            <br>
+            <p> Once the game begins, use your chosen keys to move right, left, up and down, and press the shoot button to fire
+                at ghosts. Your goal is to eliminate all ghosts the fastest and rack up points—5 pts for first‑row ghosts, 10 pts for 
+                second‑row, 15 pts for third‑row and 20 pts for fourth‑row. You have 3 lives per game. 
+                During play the top bar shows your current score, remaining lives, time left, and a “New Game” button. 
+                When the game ends, a score table appears with options to “Play Again” (same settings) or “New Game” 
+                (back to the configuration screen). Clicking on the "New Game" button on the top bar won't add the current
+                game to the score table</p>
+            
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="photos/logo.png" alt="PacWorld Logo" />
+      </div>
+      <div class="footer-center">
+        <p>© 2025 PacWorld. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="contactLink">Contact</a>
+        <a href="#" id="aboutButton">About</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+      <h2>Contact Us</h2>
+      <p>Email: noapatch@post.bgu.ac.il  </p>
+      <p>Phone: +972 509-308-770</p>
+      <p>Link to GitHub: <a href="https://github.com/WED-2023/assignment2-319123048_318969177_assignment2">
+        https://github.com/WED-2023/assignment2-319123048_318969177_assignment2</a> </p>
+    </div>
+  </div>
+
+<script src="JS/audio.js"></script>
+<script src="JS/navigation.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/highscores.js"></script>
+<script src="JS/config.js"></script>
+<script src="JS/game.js"></script>
+<script src="JS/modal.js"></script>
+</body>
+</html>
