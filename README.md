@@ -1,19 +1,8 @@
-# My Pac-Man Game: #
-
-**Submitters:**  
-Yaki Naftali - 318969177
-
-Noa Patchornik - 319123048
-
-
-**Link to the Game:**
-
- https://wed-2023.github.io/assignment2-319123048_318969177_assignment2/
+# Pacman Spaceshooting Game: #
 
 ## Over View
 
-
-This website is a game combines the Pac-Man theme with classic shooting game. The player controls Pac-Man using the keyboard and shoots bullets to defeat enemy ghosts.
+This website is a game combines the Pacman theme with classic shooting game. The player controls Pacman using the keyboard and shoots bullets to defeat enemy ghosts.
 
 ## Features
 **Registration and Login** - A system that stores players and scores using localStorage.
@@ -45,6 +34,7 @@ Game duration - 2 minutes
 Bullet color - yellow
 
 Music - background set to 50, effects set to 70
+
 
 
 
