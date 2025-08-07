@@ -1,6 +1,6 @@
 # Pacman Spaceshooting Game: #
 
-## Over View
+## Overview
 
 This website is a game combines the Pacman theme with classic shooting game. The player controls Pacman using the keyboard and shoots bullets to defeat enemy ghosts.
 
@@ -34,6 +34,7 @@ Game duration - 2 minutes
 Bullet color - yellow
 
 Music - background set to 50, effects set to 70
+
 
 
 
